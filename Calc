@@ -1,0 +1,84 @@
+While we know carbon offsets aren’t a license to emit at will, purchasing them is a way to support projects that reduce carbon emissions, and raise awareness that you can’t reduce what you don’t measure. We offset all carbon emissions associated with our operations and office space, as well as staff travel to and from the charitable bike ride and hike events. Thank you to ClearSky Climate Solutions for creating and supporting our environmental services offsets.
+
+Our lives have an impact on the planet in myriad ways. We know that many of you take action in your personal lives to mitigate your carbon footprint and we applaud that. Your participation in a Climate Ride fundraiser helps strengthen non-profits fighting global warming, promotes a bolder, more connected community, and improves personal health and well-being. Climate Ride has proven to be an effective model for fundraising because the effort of the rider/hiker provides a focal point for donations, as opposed to a simple appeal to donate to your favorite environmental NGO. We acknowledge, however, that travel to and from Climate Ride events generates greenhouse gas emissions, which could appear to be at cross-purposes with Climate Ride’s mission.
+
+To help Climate Ride participants mitigate the impacts of travel to and from Climate Ride events, we now offer information on several carbon offsets available for purchase. We have vetted these offsets for additionality, meaning that the carbon mitigation would not occur without your donation. Each offset and the procedure for purchase is explained below. We also provide a calculator for determining the pounds of CO2 you generate for your travel to and from Climate Ride events. The offsets listed below can be purchased at a price per pound or ton of CO2 (There are 2,000 lbs in a ton). With this new offset program, your are not only contributing to the fight to arrest global warming through your fundraising efforts, but now you can fund important offsets, so your donors know that you walk the walk as a climate advocate. Of course, these offsets can be useful to mitigate your greenhouse gas-emitting activity outside of Climate Ride.
+<h1>CO2 Emissions Calculator</h1>
+<form id="calculatorForm"><label for="mode">Select Mode of Travel:</label>
+<select id="mode">
+<option value="car">Carbon-burning Car</option>
+<option value="electricCar">Electric Car (California)</option>
+<option value="bus">Intercity Bus</option>
+<option value="rail">Heavy Rail</option>
+<option value="airline">Commercial Airline</option>
+<option value="bicycle">Bicycle</option>
+</select><label for="miles">Enter Miles Traveled:</label>
+<input id="miles" min="0" step="1" type="number" />
+
+&nbsp;
+
+<label for="offsetPrice">Price of Offset per lb of CO2:</label>
+<input id="offsetPrice" min="0.01" step="0.01" type="number" />
+
+&nbsp;
+
+<button type="button">Calculate</button>
+
+</form>
+<h2>Results:</h2>
+Total CO2 Emissions: <span id="totalEmissions">0</span> lbs
+
+Total Cost of Carbon Offset: $<span id="totalOffsetCost">0.00</span>
+
+<script>
+        function calculateEmissions() {
+            const mode = document.getElementById('mode').value;
+            const miles = parseFloat(document.getElementById('miles').value);
+            const offsetPrice = parseFloat(document.getElementById('offsetPrice').value);
+
+            let emissionsPerMile = 0;
+            
+            switch (mode) {
+                case 'car':
+                    emissionsPerMile = 0.6;
+                    break;
+                case 'electricCar':
+                    emissionsPerMile = 0.15;
+                    break;
+                case 'bus':
+                    emissionsPerMile = 0.15;
+                    break;
+                case 'rail':
+                    emissionsPerMile = 0.5;
+                    break;
+                case 'airline':
+                    emissionsPerMile = 0.4;
+                    break;
+                case 'bicycle':
+                    emissionsPerMile = 0.07;
+                    break;
+                default:
+                    emissionsPerMile = 0;
+            }
+
+            const totalEmissions = emissionsPerMile * miles;
+            const totalOffsetCost = totalEmissions * offsetPrice;
+
+            document.getElementById('totalEmissions').textContent = totalEmissions.toFixed(2);
+            document.getElementById('totalOffsetCost').textContent = totalOffsetCost.toFixed(2);
+        }
+    </script>
+
+<strong>Sources</strong>: cars, bus &amp; rail - Congressional Budget Office, Emissions of Carbon Dioxide in the Transportation Sector (Dec. 2022) (<a href="https://www.cbo.gov/publication/58861">https://www.cbo.gov/publication/58861</a>); airplane - Carbon Independent Inc. (https://www.carbonindependent.org/22.html)
+
+<strong>Suggested carbon offset programs:</strong>
+
+<strong><a href="https://www.cooleffect.org">www.cooleffect.org/</a></strong>
+
+<strong><a href="https://welldonefoundation.org/">https://welldonefoundation.org/</a></strong>
+
+<strong><a href="https://www.patch.io/solutions/carbon-accounting">www.patch.io/solutions/carbon-accounting</a></strong>
+
+<strong><a href="https://www.tomorrowsair.com">www.tomorrowsair.com</a></strong>
+
+<strong>A final note:</strong> For most of our riders/hikers, travel to and from Climate Ride events does not necessarily result in a net addition of greenhouse gases to the planet. Climate Riders often approach Climate Ride events as travel vacations. If Climate Ride did not exist for our riders, they would tend to travel to places similar to our Climate Ride destinations as tourists, but they would not raise funds for NGOs fighting global warming and would likely rely on carbon-burning transportation at the destination instead of zero-carbon bicycle travel.
